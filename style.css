@@ -41,6 +41,7 @@ body {
     width: 100%;
     height: 53px;
     color: #000;
+    letter-spacing: 1.4px;
     background: none;
     font-size: 1.06rem;
     border-radius: 4px;
@@ -64,13 +65,29 @@ body {
     margin-top: 26px;
 }
 
-.pass-indicator:before {
+.pass-indicator::before {
     position: absolute;
     content: "";
     height: 100%;
     width: 50%;
     border-radius: inherit;
     background: #f1c80b;
+    transition: width 0.3s ease;
+}
+
+.pass-indicator#weak::before {
+    width: 20%;
+    background: #e64a4a;
+}
+
+.pass-indicator#medium::before {
+    width: 50%;
+    background: #f1c80b;
+}
+
+.pass-indicator#strong::before {
+    width: 100%;
+    background: #4285f4;
 }
 
 .wrapper .pass-length {
